@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pachet conținut coach fitness</title>
+  <style>
+    /* Reset & basics */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f7fcfb;
+      color: #222;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    header h1 {
+      color: #2c9c69; /* verde mentă */
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.3em;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 0;
+    }
+
+    /* Video */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 30px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(44, 156, 105, 0.2);
+    }
+    .video-wrapper iframe, 
+    .video-wrapper video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border-radius: 10px;
+    }
+
+    /* Beneficii */
+    .benefits {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(44, 156, 105, 0.1);
+      margin-bottom: 40px;
+    }
+    .benefits h2 {
+      color: #2c9c69;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    .benefits ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .benefits ul li {
+      margin-bottom: 15px;
+      padding-left: 25px;
+      position: relative;
+    }
+    .benefits ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #2c9c69;
+      font-weight: 700;
+    }
+
+    /* Formular */
+    form {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(44, 156, 105, 0.1);
+      max-width: 500px;
+      margin: 0 auto 50px auto;
+    }
+    form h2 {
+      text-align: center;
+      color: #2c9c69;
+      font-weight: 600;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      color: #444;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1.8px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #2c9c69;
+      outline: none;
+    }
+    textarea {
+      min-height: 80px;
+    }
+    button {
+      margin-top: 25px;
+      background: #2c9c69;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: none;
+      padding: 15px;
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #238856;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(44, 156, 105, 0.1);
+    }
+    .faq h3 {
+      color: #2c9c69;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    .faq dt {
+      font-weight: 700;
+      margin-top: 15px;
+      cursor: pointer;
+      position: relative;
+      padding-right: 20px;
+    }
+    .faq dt::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      font-size: 1.4rem;
+      color: #2c9c69;
+      transition: transform 0.3s ease;
+    }
+    .faq dd {
+      margin-left: 0;
+      margin-bottom: 15px;
+      display: none;
+      font-weight: 400;
+      color: #444;
+    }
+    .faq dt.active::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+    .faq dt.active + dd {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .benefits h2,
+      form h2,
+      .faq h3 {
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 1rem;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Transformă-ți contul de fitness în magnet pentru comunitate activă și postări care aduc rezultate</h1>
+      <p>Pachet complet pentru coachii care vor să posteze cu sens, să crească engagementul și să-și organizeze conținutul fără stres</p>
+    </header>
+
+    <section class="video-wrapper">
+      <!-- Înlocuiește link-ul cu linkul video-ului tău de pe YouTube / Vimeo -->
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video prezentare" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="benefits">
+      <h2>Ce primești în pachetul tău</h2>
+      <ul>
+        <li>30 idei personalizate de postări, gata să fie publicate</li>
+        <li>10 carusele complet scrise, cu texte și CTA-uri care cresc interacțiunea</li>
+        <li>5 scripturi pentru Reels, cu hook și structură clară</li>
+        <li>Planner Notion pentru o organizare zilnică facilă</li>
+        <li>Sesiune săptămânală de revizuire și feedback pe Zoom, 30 minute</li>
+      </ul>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLScbsi52srFgjP8hJ8nkA5UTYk5ZDPlGOkXoa3hU8aLhD2a-Dw/formResponse" method="POST" target="_blank">
+  <button type="submit">Vreau pachetul</button>
+  </form>
+</section>
+    <section class="faq">
+      <h3>Întrebări frecvente</h3>
+      <dl>
+        <dt>Pot folosi ideile pentru orice platformă?</dt>
+        <dd>Da! Ideile și scripturile sunt versatile și funcționează pe Instagram, Facebook, TikTok sau orice platformă unde postezi.</dd>
+
+        <dt>Ce fac dacă nu am experiență în creare conținut?</dt>
+        <dd>Tot conținutul este gata scris și structurat simplu, iar în sesiunea de feedback te ajut să ajustezi ce e nevoie.</dd>
+
+        <dt>Cum funcționează sesiunea de feedback?</dt>
+        <dd>Ne întâlnim pe Zoom o dată pe săptămână, discutăm progresul și îți ofer recomandări personalizate.</dd>
+
+        <dt>Cât timp durează să pun în aplicare tot pachetul?</dt>
+        <dd>Totul este gândit să poată fi implementat ușor, în aproximativ o lună, cu suport continuu.</dd>
+      </dl>
+    </section>
+
+  </div>
+
+  <script>
+    // Script simplu pentru a face FAQ să se deschidă/închidă
+    document.querySelectorAll('.faq dt').forEach(dt => {
+      dt.addEventListener('click', () => {
+        dt.classList.toggle('active');
+      });
+    });
+
+    // Formular poate fi conectat ulterior la backend / email marketing
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Mulțumim pentru interes! Te voi contacta curând.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
